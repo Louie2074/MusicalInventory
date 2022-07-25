@@ -1,0 +1,15 @@
+extends layout
+
+block content 
+    h1 #{title}
+
+    ul 
+        each album in albums 
+            li  
+                h1 
+                    a(href=album.url) #{album.title}
+
+
+
+        else 
+            h1 There are no Albums for this Genre

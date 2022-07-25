@@ -1,0 +1,16 @@
+
+extends layout
+
+block content 
+    if song
+        h1 #{song.title}
+        strong Artists: 
+            each artist in song.artists
+                a(href=artist.url) #{artist.name}
+        p #[strong Duration:] #{song.duration} minutes
+        p #[strong Release Date:] #{song.formatDate}
+        p #[strong Explicit:] #{song.explicit}
+        
+                    
+    else 
+        h1 There are no Albums for this Genre

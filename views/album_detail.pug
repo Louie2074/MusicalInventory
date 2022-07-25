@@ -1,0 +1,18 @@
+
+extends layout
+
+block content 
+    if album[0]
+        h1 #{album[0].title}
+            p
+                strong Artist: 
+                a(href=album[0].artist.url) #{album[0].artist.name}
+            p #[strong Release Date:] #{album[0].formatDate}
+            p #[strong Genre:] #{album[0].genre.name}
+            strong Songs: 
+                each song in album[0].songs
+                    a(href=song.url) #{song.title}
+                    | ,
+                    
+    else 
+        h1 There are no Albums for this Genre

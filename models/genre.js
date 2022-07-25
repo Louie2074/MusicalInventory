@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const genreScheme = mongoose.Schema({
-    genre:{type: String, required:true}
+    name:{type: String, required:true}
 })
 
 genreScheme.virtual('url').get(function () {

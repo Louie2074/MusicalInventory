@@ -3,3 +3,14 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  if error 
+    h1 There was an error getting the inventory 
+  else 
+    p Heres our inventory 
+
+    ul 
+      li #[strong Genres] #{data.genreCount}
+      li #[strong Albums] #{data.albumCount}
+      li #[strong Songs] #{data.songCount}
+      li #[strong Artists] #{data.artistCount}
